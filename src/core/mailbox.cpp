@@ -2,9 +2,11 @@
 #include "core/message.hpp"
 
 #include <vector>
+#include <iostream>
 
 namespace mail_lib::core {
 Mailbox::Mailbox(std::string name, std::vector<Message> const &msgs) {
+  std::cout << "Construíndo mailbox " << name << std::endl;
   _name = name;
   _msgs = msgs;
 }
