@@ -6,6 +6,7 @@
 
 namespace mail_lib::core {
 Mailapp::Mailapp(std::string user) : _user(user), _user_storage(user) {
+  std::cout << "Construíndo mailapp para o usuário " << user << std::endl;
   auto mboxes = _user_storage.load();
 
   auto inbox_it = mboxes.find("inbox");
