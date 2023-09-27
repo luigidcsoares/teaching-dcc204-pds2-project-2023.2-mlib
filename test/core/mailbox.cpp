@@ -21,6 +21,7 @@ TEST_CASE("Adicionando mensagens à caixa de entrada vazia") {
     CHECK_EQ(a.content, b.content);
   };
 
+  CHECK_EQ(msgs.size(), 2);
   check_msg(msg0, msgs[0]);
   check_msg(msg1, msgs[1]);
 }
@@ -39,6 +40,7 @@ TEST_CASE("Adicionando mensagens à caixa já preenchida") {
 
   std::vector<Message> msgs = mbox.read_all();
 
+  CHECK_EQ(msgs.size(), 2);
   check_msg(old_msgs[0], msgs[0]);
   check_msg({ "from1", "to1", "content1" } , msgs[1]);
 }
